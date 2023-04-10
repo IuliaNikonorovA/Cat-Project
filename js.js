@@ -34,18 +34,33 @@ const card = document.createElement("div");
 
   const btn = document.createElement("button")
   btn.innerHTML = 'Посмотреть';
+
   btn.addEventListener("click", e => {
   if (btn.innerHTML === 'Посмотреть'){
-    //console.log(btn)
     info. style.display = "block";
     btn.innerHTML = 'Закрыть'}
     else {info. style.display = "none";
     btn.innerHTML = 'Посмотреть'
-  }
+  }})
 
-   
+
+
+  const btn2 = document.createElement("button")
+  btn2.innerHTML = 'Изменить';
+  btn2.value = cat.id;
+  btn2.addEventListener("click", e => {
+  if (btn2.innerHTML === 'Изменить'){
+    console.log(cat.id)
+
+    cardUpd(cat.id)
+   document.querySelector(".form-container").style.display="block"
+ }
+  //   else{
+  //     document.querySelector(".form-container").style.display="none"
+  //   btn2.innerHTML = 'Изменить'
+  // }
   })
-  card.append(btn, info)
+  card.append(btn, btn2, info)
 
   
   
@@ -53,17 +68,27 @@ const card = document.createElement("div");
 
 }
   
- 
+let user = localStorage.getItem("people"); // имя пользователя, добавили хранилище
+if (!user) {
+    user = prompt("Ваше уникальное имя: ", "JN");
+    localStorage.setItem("people", user);
+}
+let people = localStorage.getItem("people-data")
 
 const url = 'https://jsonplaceholder.typicode.com/users';
 const getUsers = async (url) => {
     const response = await fetch(url);
     const answer = await response.json();
-    console.log(answer);
+   // console.log(answer);
   for (let c of answer){
     Card(c,box)
   }
-};
+  
+    localStorage.setItem("people-data", JSON.stringify(answer));
+
+  }
+  //localStorage.setItem('c', 'значение')
+
 getUsers(url)
 //function Add(data){
  // for(let c of data){
@@ -82,7 +107,19 @@ getUsers(url)
 
    //    btn.addEventListener('click', getUsers(url))
 
-function openForm() {
-    document.getElementById("myForm").style.display = "block"; } 
+ function openForm() {
+   document.querySelector(".form-container").style.display="block" } 
  function closeForm() {
-    document.getElementById("myForm").style.display = "none";}
+   document.querySelector(".form-container").style.display="none" }
+  
+  
+const a  = localStorage.getItem("people-data")[/"name"/]
+//console.log(a)
+let keys = Object.keys(localStorage);
+for(let key of keys) {
+  alert(`${key}: ${localStorage.getItem(key)}`);
+}
+
+document.querySelector(".add-button").addEventListener("clicl", e => {
+  e.stopPropagation;
+document.querySelector(".form-container").style.display="block"})

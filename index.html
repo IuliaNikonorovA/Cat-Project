@@ -13,26 +13,36 @@
   </head>
 </head>
 <body>
+  <header>
+    <button class="add-button" onclick="openForm()">Добавить</button>
+  </header>
 
 <container class = "container"></container>
-<button class="open-button" onclick="openForm()">Информация</button>
+
 <div class="form-popup" id="myForm">
   <form action="#" class="form-container" name = "my">
    
     <h1>User</h1>
     <label for="name" class = "label"><b>Имя</b></label>
-    <input type="text" class = "name" placeholder="name" required>
+    <input type="text" class = "name" placeholder="name" name="name" required>
    
     <label for="username"><b>User name</b></label>
     <input type="text" class = "inputname" placeholder="User name" name="username" required>
    
     <label for="email"><b>Е-мейл</b></label>
     <input type="text" placeholder="Ваш е-мейл" name="email" required>
+
+    <label for="id"><b>Id</b></label>
+    <input type="text" placeholder="Ваш id" name="id" required>
+
+    <label for="phone"><b>Phone</b></label>
+    <input type="text" placeholder="Ваш телефон" name="phone" required>
    
     <button type="submit" class="btn">Отправить</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>
   </form>
 </div>
 <script src="js.js"></script>
+<script src="cardForm.js"></script>
 </body>
 </html>
