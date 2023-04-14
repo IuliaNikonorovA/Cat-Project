@@ -1,0 +1,99 @@
+header{
+  height: 50px;
+  width: 100%;
+  top: 0;
+  background-color: #ea543db6;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+}
+.header_h1{
+  font-size: 30px;
+}
+.add-button {
+  width: 100px;
+  background-color: rgb(22, 136, 136);
+  color: #f8fafc;
+  cursor: pointer;
+   } 
+.form-container, .form-container-upd {
+  background-color: rgb(22, 136, 136);
+  color: black;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  width: 250px;
+  height: auto;
+  max-width: 320px;
+  display: none;
+}
+.form-container input[type=text], .form-container input[type=password], .form-container input[type=number], .form-container textarea {
+  width: 240px;}
+  
+.form-container input[type=text]:focus, .form-container input[type=password]:focus, .form-container textarea:focus {
+  background-color: #ddd;
+}
+.form-container .btn-add {
+  background-color: #ddd;
+}
+.form-container-upd input[type=text], .form-container-upd input[type=password], .form-container-upd input[type=number], .form-container-upd textarea {
+  width: 240px;}
+
+.form-container-upd input[type=text]:focus, .form-container-upd input[type=password]:focus, .form-container-upd textarea:focus {
+  background-color: #ddd;}
+
+.form-container-upd .btn-upd {
+  background-color: #ddd;
+}
+.container {
+  background-image: url(images/1636916333_2-bogatyr-club-p-sostarennii-fon-2.jpeg) ;
+  min-height: 100vh;
+  min-width: 100w;
+  padding: 30px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  top: 50px;
+}
+.card{
+  width: 180px;
+  padding: 15px;
+  top: 150px;
+}
+.divnamelike{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__like {
+  color: rgb(152, 14, 41);
+}
+.divimage{
+   width: 180px;
+   height: 160px;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   overflow: hidden;
+  }
+.imgdefault{  
+  width: 180px;
+  }
+.info {
+  background-color: rgb(13, 20, 51);
+  color: azure;
+  padding: 15px;
+  display: none;
+}
+.card_trash card_info{
+  cursor: pointer;
+  color: black;
+}
+.divBtn{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}

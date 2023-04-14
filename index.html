@@ -4,45 +4,88 @@
 <head>
 	
 <meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="cal.css">
+ <link rel="stylesheet" href="css.css">
 
-	<title></title>
+	<title>CatsBandit</title>
   </head>
 </head>
 <body>
   <header>
+    <h1 class="header_h1">Cats</h1>
     <button class="add-button" onclick="openForm()">Добавить</button>
   </header>
 
 <container class = "container"></container>
 
 <div class="form-popup" id="myForm">
+
   <form action="#" class="form-container" name = "my">
    
-    <h1>User</h1>
+    <h1>New Cat</h1>
     <label for="name" class = "label"><b>Имя</b></label>
     <input type="text" class = "name" placeholder="name" name="name" required>
    
-    <label for="username"><b>User name</b></label>
-    <input type="text" class = "inputname" placeholder="User name" name="username" required>
-   
-    <label for="email"><b>Е-мейл</b></label>
-    <input type="text" placeholder="Ваш е-мейл" name="email" required>
-
     <label for="id"><b>Id</b></label>
-    <input type="text" placeholder="Ваш id" name="id" required>
-
-    <label for="phone"><b>Phone</b></label>
-    <input type="text" placeholder="Ваш телефон" name="phone" required>
+    <input type="number" class = "id" placeholder="id" name="id" required>
    
-    <button type="submit" class="btn">Отправить</button>
+    <label for="image"><b>Фото</b></label>
+    <input type="text" placeholder="https://" name="image">
+
+    <label for="age"><b>Возраст</b></label>
+    <input type="number" placeholder="" name="age">
+
+    <label for="rate"><b>Pейтинг</b></label>
+    <input type="number" placeholder="от 1 до 5" name="rate">
+
+    <label>
+      <input type="checkbox" name="favorite">
+      Любимчик
+    </label>
+     <textarea name="description" placeholder="Информация о питомце"></textarea>
+
+    <button type="submit" class="btn-add">Добавить</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>
   </form>
+
+
+
+  <form action="#" class="form-container-upd" name = "upd">
+   
+    <h1>Cat</h1>
+    <label for="name" class = "label"><b>Имя</b></label>
+    <input type="text" class = "name" placeholder="name" name = "name" readonly>
+   
+    <label for="id"><b>Id</b></label>
+    <input type="number" class = "id" placeholder="id" name="id" readonly >
+   
+    <label for="image"><b>Фото</b></label>
+    <input type="text" placeholder="е-мейл" name="image">
+
+    <label for="age"><b>Возраст</b></label>
+    <input type="number" placeholder="Возраст" name="age">
+
+    <label for="rate"><b>Pейтинг</b></label>
+    <input type="number" placeholder="Рейтинг" name="rate">
+
+    <label>
+      <input type="checkbox" name="favorite">
+      Любимчик
+    </label>
+     <textarea name="description" placeholder="Информация о питомце"></textarea>
+
+    <button type="submit" class="btn-upd">Сохранить</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>
+  </form>
+
 </div>
-<script src="js.js"></script>
-<script src="cardForm.js"></script>
+
+<script src="card.js"></script>
+<script src="global.js"></script>
+<script src="Form.js"></script>
 </body>
 </html>
